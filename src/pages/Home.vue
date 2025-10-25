@@ -1,11 +1,10 @@
 <script setup lang="ts">
-import HomepageView from "../views/HomepageView.vue";
+import Test from "../components/Test.vue";
+import MainLayout from "../layouts/MainLayout.vue";
 </script>
 
 <template>
-  <HomepageView>
-    <div class="">
-      <p>Home</p>
-    </div>
-  </HomepageView>
+  <MainLayout>
+    <div><Test title="hello" /></div>
+  </MainLayout>
 </template>

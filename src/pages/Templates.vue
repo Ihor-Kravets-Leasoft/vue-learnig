@@ -4,8 +4,8 @@ import HomepageView from "../views/HomepageView.vue";
 
 <template>
   <HomepageView>
-    <div class="">
-      <p>Home</p>
-    </div>
+    <div class="w-full">
+        <p>Templates</p>
+      </div>
   </HomepageView>
 </template>

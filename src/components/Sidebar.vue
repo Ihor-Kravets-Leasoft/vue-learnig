@@ -5,9 +5,9 @@ import Icon from "./Icon.vue";
 
 <template>
   <div
-    class="px-4 py-6 bg-[#070707] duration-300 whitespace-nowrap h-screen overflow-y-auto overflow-x-hidden shrink-0 w-[220px] flex flex-col items-start justify-between fixed left-0"
+    class="px-4 py-6 bg-[#070707] duration-300 whitespace-nowrap h-screen overflow-y-auto overflow-x-hidden shrink-0 w-[220px] flex flex-col items-start justify-between fixed left-0 z-10"
   >
-    <div>
+    <div class="w-full">
       <nav class="w-full">
         <a class="px-4 flex" href="./index.html" aria-label="logo"
           ><svg width="130" height="15.5" class="mb-8">
@@ -69,15 +69,15 @@ import Icon from "./Icon.vue";
         </p>
         <ul class="flex flex-col gap-1 w-full mb-4">
           <li>
-            <SidebarButton path="/voice-and-sound" label="Voice & Sound"
+            <SidebarButton path="/voice-and-sound" label="Effects"
               ><template #icon
                 ><Icon name="voice-and-sound" class="size-5" /></template
             ></SidebarButton>
           </li>
           <li>
-            <SidebarButton path="/voice-and-sound" label="Voice & Sound"
+            <SidebarButton path="/templates" label="Templates"
               ><template #icon
-                ><Icon name="voice-and-sound" class="size-5" /></template
+                ><Icon name="templates" class="size-5" /></template
             ></SidebarButton>
           </li>
         </ul>
@@ -96,7 +96,7 @@ import Icon from "./Icon.vue";
         </ul>
       </nav>
     </div>
-    <div>
+    <div class="w-full">
       <ul>
         <li>
           <SidebarButton path="/voice-and-sound" label="Voice & Sound"
@@ -116,7 +116,7 @@ import Icon from "./Icon.vue";
       >
         social media
       </p>
-      <ul class="flex gap-2">
+      <ul class="flex gap-2 justify-center">
         <li>
           <a
             class="flex items-center justify-center p-1.5 border rounded-lg bg-linear-to-b hover:from-[#1DDE6A]/0 hover:to-[#9FFFCD]/10 hover:border-[#9FFFCD] duration-300 transition"

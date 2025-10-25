@@ -1,8 +1,8 @@
 <script setup></script>
 
 <template>
-  <header class="absolute top-0 right-0">
-    <ul class="flex gap-2 px-8 py-6">
+  <header class="fixed top-0 right-0 w-full z-9">
+    <ul class="flex justify-end gap-2 px-8 py-6">
       <li class="flex max-h-10">
         <a
           class="p-2.5 border rounded-lg mr-3 flex justify-center items-center relative before:content-[''] before:absolute before:h-8 before:w-px before:bg-white before:-right-3 bg-linear-to-b from-[#1DDE6A]/0 to-[#9FFFCD]/30"

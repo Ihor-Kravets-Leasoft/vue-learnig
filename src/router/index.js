@@ -1,16 +1,14 @@
-import { createMemoryHistory, createRouter } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 
-import SidebarButton from "../components/Buttons/SidebarButton.vue";
+import Home from "../pages/Home.vue";
+import Templates from "../pages/Templates.vue";
 
 const routes = [
-  {
-    path: "/",
-    component: Home,
-  },
-  { path: "/about", component: AboutView },
+  { path: "/", name: "home", component: Home },
+  { path: "/templates", name: "templates", component: Templates },
 ];
 
 export const router = createRouter({
-  history: createMemoryHistory(),
+  history: createWebHistory(),
   routes,
 });

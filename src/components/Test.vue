@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import { ref } from "vue";
 
 const isVisible = ref(false);
@@ -14,9 +14,9 @@ function increment() {
   count.value++;
 }
 
-defineProps<{
-  title: string;
-}>();
+defineProps({
+  title: String,
+});
 </script>
 
 <template>

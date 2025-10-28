@@ -1,42 +1,53 @@
 <script setup>
+import IInput from "../components/Input/IInput.vue";
 import MainLayout from "../layouts/MainLayout.vue";
-import { ref } from "vue";
+import { ref, toRaw } from "vue";
+
+const userData = ref({
+  name: "",
+  email: "",
+  password: "",
+});
+
+function setLocal() {
+  const data = toRaw(userData.value);
+  localStorage.setItem("userData", JSON.stringify(data));
+}
+
+userData.value = JSON.parse(
+  localStorage.getItem("userData") ||
+    '{"name": "", "email": "", "password": ""}'
+);
 </script>
 
 <template>
   <MainLayout>
-    <div>
+    <div class="flex flex-col gap-6">
       <h2 class="text-3xl">Form</h2>
-      <form class="flex flex-col">
-        <div class="flex flex-col mb-4">
-          <label class="mb-1" for="name">Enter Name {{ name }}</label>
-          <input
-            class="border rounded-2xl px-4 py-2"
-            type="text"
-            name="name"
-            id="name"
-            v-model="name"
-          />
-        </div>
-        <div class="flex flex-col mb-4">
-          <label class="mb-1" for="email">Enter Email</label>
-          <input
-            class="border rounded-2xl px-4 py-2"
-            type="email"
-            name="email"
-            id="email"
-          />
-        </div>
-        <div class="flex flex-col mb-4">
-          <label class="mb-1" for="tel">Enter Number</label>
-          <input
-            class="border rounded-2xl px-4 py-2"
-            type="number"
-            name="tel"
-            id="tel"
-          />
-        </div>
-        <button>Submit</button>
+      <form
+        @submit.prevent="console.log(toRaw(userData))"
+        @input="setLocal"
+        class="flex flex-col"
+      >
+        <IInput
+          label="Enter Your Name"
+          type="text"
+          id="name"
+          v-model="userData.name"
+        />
+        <IInput
+          label="Enter Your Email"
+          type="email"
+          id="email"
+          v-model="userData.email"
+        />
+        <IInput
+          label="Enter Your Passwor"
+          type="password"
+          id="password"
+          v-model="userData.password"
+        />
+        <button type="submit">Submit</button>
       </form>
     </div>
   </MainLayout>

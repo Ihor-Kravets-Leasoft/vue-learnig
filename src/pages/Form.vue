@@ -2,6 +2,9 @@
 import IInput from "../components/Input/IInput.vue";
 import MainLayout from "../layouts/MainLayout.vue";
 import { ref, toRaw } from "vue";
+import { useMainStore } from "../store/store.js";
+
+const counter = useMainStore();
 
 const userData = ref({
   name: "",
@@ -47,6 +50,10 @@ userData.value = JSON.parse(
           id="password"
           v-model="userData.password"
         />
+        <button type="button" @click="counter.increment">
+          {{ counter.counter }}
+        </button>
+
         <button type="submit">Submit</button>
       </form>
     </div>

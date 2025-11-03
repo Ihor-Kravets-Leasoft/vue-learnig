@@ -3,18 +3,20 @@ import { ref } from "vue";
 import MainLayout from "../layouts/MainLayout.vue";
 import ModalContainer from "../components/ModalWindows/ModalContainer.vue";
 import Form from "./Form.vue";
+import { useModalOpen } from "../composables/useModalOpen.js";
+import OpenModalButton from "../components/Buttons/OpenModalButton.vue";
 
-const isOpen = ref(false);
+const modal = useModalOpen();
 </script>
 
 <template>
   <MainLayout>
     <div>
       <p>Modal</p>
-      <ModalContainer v-if="isOpen" @close="isOpen = false">
+      <ModalContainer v-if="modal.isModalOpen">
         <Form />
       </ModalContainer>
-      <button @click="isOpen = true">Open Modal</button>
+      <OpenModalButton><template #text>Open Modal</template></OpenModalButton>
     </div>
   </MainLayout>
 </template>

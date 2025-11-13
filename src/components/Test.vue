@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { useMainStore } from "../store/store.js";
 import { useModalOpen } from "../composables/useModalOpen.js";
 import ModalContainer from "../components/ModalWindows/ModalContainer.vue";
@@ -12,11 +12,6 @@ const modal = useModalOpen();
 const isVisible = ref(false);
 const hasError = ref(false);
 const errorClass = ref("error");
-const params = [
-  { text: "bibibi", text2: "bububu" },
-  { text: "bababa", text2: "bobobo" },
-  { text: "bebebe", text2: "bybyby" },
-];
 
 defineProps({
   title: String,
@@ -24,12 +19,7 @@ defineProps({
 </script>
 
 <template>
-  <ul class="w-full flex flex-row gap-4">
-    <li v-for="{ text, text2 } in params" :key="text">
-      <p v-cloak>{{ text }}</p>
-      <p>{{ text2 }}</p>
-    </li>
-  </ul>
+
   <p v-if="title" :class="[hasError ? errorClass : '']">{{ title }}</p>
   <p v-show="isVisible">Visible</p>
   <button @click="isVisible = !isVisible">Click</button>

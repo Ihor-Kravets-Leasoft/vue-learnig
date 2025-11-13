@@ -6,7 +6,7 @@ export const useMainStore = defineStore("main", {
   }),
   actions: {
     increment() {
-      this.counter++;
+      this.counter = this.counter + 100;
       localStorage.setItem("counter", JSON.stringify(this.counter));
     },
   },

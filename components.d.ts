@@ -15,6 +15,7 @@ declare module 'vue' {
     Header: typeof import('./src/components/Header/Header.vue')['default']
     IInput: typeof import('./src/components/Input/IInput.vue')['default']
     ModalContainer: typeof import('./src/components/ModalWindows/ModalContainer.vue')['default']
+    Odometer: typeof import('./src/components/Odometer.vue')['default']
     OpenModalButton: typeof import('./src/components/Buttons/OpenModalButton.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

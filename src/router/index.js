@@ -10,6 +10,7 @@ const router = createRouter({
     { path: "/", name: "home", component: Home },
     { path: "/form", name: "form", component: Form },
     { path: "/modal", name: "modal", component: Modal },
+    { path: "/odometer", name: "odometer", component: () => import("../pages/OdometerTest.vue") },
   ],
 });
 

@@ -6,6 +6,7 @@
       <li><RouterLink to="/">Home</RouterLink></li>
       <li><RouterLink to="/form">Form</RouterLink></li>
       <li><RouterLink to="/modal">Modal</RouterLink></li>
+      <li><RouterLink to="/odometer">Odometer</RouterLink></li>
     </ul>
   </header>
 </template>

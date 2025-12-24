@@ -2,7 +2,19 @@
   "compilerOptions": {
     "target": "es2015",
     "lib": ["es2015", "dom"],
-    "types": ["vite/client"]
+    "types": ["vite/client"],
+    "moduleResolution": "bundler",
+    "module": "ESNext",
+    "resolveJsonModule": true,
+    "allowImportingTsExtensions": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "noEmit": true
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue", "src/composables/useModalOpen.js"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.vue",
+    "src/composables/useModalOpen.js"
+  ]
 }
